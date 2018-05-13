@@ -1,2 +1,11 @@
-<% simple_form_for(@task, html: {class: 'form-horizontal' }) do |f| %>
-  <%= f.collection_select :category_id
+<%= simple_form_for(@task) do |f| %>
+  <%= f.collection_select :category_id, Industry.all, :id, :title, { prompt: "Choose a category" }, input_html: { class: "dropdown-toggle" }%>
+  <%= f.input :title, label: "Task Title", input_html: { class: "form-control" } %>
+  <%= f.input :description, label: "Task Description", input_html: { class: "form-control" } %>
+  <%= f.input :company, label:"Your Company", input_html: { class: "form-control" } %>
+  <%= f.input :url, label:"Link to Task", input_html: { class: "form-control" } %>
+  <br>
+  <%= f.button :submit %>
+<% end %>
+
+<h2>Form</h2>
