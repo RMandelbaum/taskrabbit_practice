@@ -1,0 +1,2 @@
+class SubIndustriesController < ApplicationController
+end
